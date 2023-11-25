@@ -3,7 +3,8 @@
   "packages": [
     "shadcn-ui",
     "prisma",
-    "next-auth"
+    "next-auth",
+    "trpc"
   ],
   "preferredPackageManager": "yarn",
   "t3": false,

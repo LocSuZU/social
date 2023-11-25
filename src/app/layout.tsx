@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { Toaster } from "@/components/ui/toaster";
 import NextAuthProvider from "@/lib/auth/Provider";
 import Navbar from "@/components/Navbar";
+import TrpcProvider from "@/lib/trpc/Provider";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,10 +23,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
 <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-<NextAuthProvider><main className="max-w-3xl mx-auto md:p-0 p-6">
+<NextAuthProvider>
+<TrpcProvider><main className="max-w-3xl mx-auto md:p-0 p-6">
 <Navbar />
 {children}
-</main></NextAuthProvider>
+</main></TrpcProvider>
+</NextAuthProvider>
 
 <Toaster />
 </ThemeProvider>
